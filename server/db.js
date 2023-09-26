@@ -7,7 +7,6 @@ const pool = new Pool({
    host: process.env.HOST,
    port: process.env.DBPORT,
    database: process.env.DATABASE,
-   idleTimeoutMillis: 72000000,
    keepAlive: true,
    ssl: 'no-verify'
 });
