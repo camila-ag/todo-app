@@ -1,6 +1,3 @@
-psql -U postgres -W -h localhost postgres
-\c todoapp
-
 CREATE DATABASE todoapp;
 
 CREATE TABLE todos (
