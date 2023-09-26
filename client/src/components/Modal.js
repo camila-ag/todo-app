@@ -7,7 +7,7 @@ const Modal = ({mode, setShowModal, getData, task}) => {
 
   const [data, setData] = useState({
     user_email: editMode ? task.user_email : cookies.Email,
-    title: editMode ? task.title : null,
+    title: editMode ? task.title : '',
     progress: editMode ? task.progress : 50,
     date: editMode ? task.date : new Date().toLocaleDateString()
   });
@@ -21,7 +21,6 @@ const Modal = ({mode, setShowModal, getData, task}) => {
         body: JSON.stringify(data)
       })
       if(response.status === 200){
-        console.log("Funciona :D");
         setShowModal(false);
         getData()
       }
@@ -75,7 +74,7 @@ const Modal = ({mode, setShowModal, getData, task}) => {
               onChange={handleChange}
             />
             <br/>
-            <label for="range">Selecciona el progreso</label>
+            <label htmlFor="range">Selecciona el progreso</label>
             <input
               required
               id="range"
