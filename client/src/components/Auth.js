@@ -41,9 +41,9 @@ const Auth = () => {
         <div className="auth-container-box">
           <form>
             <h2 className='text'>{isLogin ? 'Inicia sesion' : 'Registrate'}</h2>
-            <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email" placeholder={isLogin ? 'test@test.cl' : 'Email'} onChange={(e) => setEmail(e.target.value)}/>
 
-            <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
+            <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={isLogin ? '123' : 'Contraseña'} />
             {!isLogin && <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirma la contraseña" />}
             <button onClick={(e) => handleSubmit(e, isLogin ? 'login' : 'signup')} className="button">Enviar</button>
             {error && <p className='error'>{error}</p>}
